@@ -50,8 +50,9 @@
 			<ul>
 				<div ng-repeat="ans in question.ansArray">
 					<label>
-						<input type="radio" name="answer" value="answer"/>{{ans}}
-						<!-- <input type="radio" ng-model="ansSelected" ng-value="" /> -->
+						<!-- <input type="radio" name="answer" value="answer"/>{{ans}} -->
+						<input type="radio" ng-model="vm.ansSelected" value="" /> {{ans}}
+						<!-- <input type="radio" ng-model={{ansSelected}} ng-value="" />{{ans}} -->
 						<!-- <div><li>Answer: {{ans}}</li></div> -->
 					</label>
 				</div>

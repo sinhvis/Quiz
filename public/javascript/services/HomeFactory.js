@@ -20,7 +20,7 @@
 
 	}
 
-	var ansSelected ;
+	var ansSelected = "";
 
 	function HomeFactory($http, $q) {
 		var o = {};
