@@ -41,6 +41,7 @@
 	</div>
 
 	<h3>Quiz Form</h3>
+	<h4>Value of ansSelected: {{ansSelected}}</h4>
 	
 	<form name = "quizForm">
 		<div ng-repeat="question in vm.Questions track by $index">
@@ -51,7 +52,7 @@
 				<div ng-repeat="ans in question.ansArray">
 					<label>
 						<!-- <input type="radio" name="answer" value="answer"/>{{ans}} -->
-						<input type="radio" ng-model="vm.ansSelected" value="" /> {{ans}}
+						<input type="radio" ng-model="vm.ansSelected" value="{{ans}}" /> {{ans}}
 						<!-- <input type="radio" ng-model={{ansSelected}} ng-value="" />{{ans}} -->
 						<!-- <div><li>Answer: {{ans}}</li></div> -->
 					</label>
@@ -59,4 +60,5 @@
 			</ul>
 		</div>
 	</form>
+	<tt>ansSelected = {{ansSelected | json}}</tt><br />
 </div>
