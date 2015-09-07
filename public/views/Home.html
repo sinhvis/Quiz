@@ -1,0 +1,61 @@
+<div ng-controller="HomeController as vm">
+	<h1>{{vm.title}}</h1>
+
+	<h3>All Questions using ansArray[index] hard coded</h3>
+	<div ng-repeat="question in vm.Questions">
+		<div>{{question.q}} <br />
+			<ul>
+				<li>{{question.ansArray[0]}}</li>
+				<li>{{question.ansArray[1]}}</li>
+			</ul>
+		</div>
+		
+	</div>
+
+	<hr>
+	<h3>Displaying all questions</h3>
+	<div ng-repeat="question in vm.Questions">
+		<div>{{question.q}}</div>
+	</div>
+
+	<hr>
+	<h3>Contents of array</h3>
+	{{vm.Questions}}
+	<br />
+	Contents of first ansArray
+	{{vm.Questions[0].ansArray}}
+
+	<h3>Testing first question</h3>
+	<div ng-repeat="ans in vm.Questions[0].ansArray">
+		<div>{{ans}}</div>
+	</div>
+
+	<h3>Displaying all questions and their answers</h3>
+	<div ng-repeat="question in vm.Questions track by $index">
+		<div>Question {{$index + 1}}:  {{question.q}} </div>
+		<ul>
+			<div ng-repeat="ans in question.ansArray">
+				<div><li>Answer: {{ans}}</li></div>
+			</div>
+		</ul>
+	</div>
+
+	<h3>Quiz Form</h3>
+	
+	<form name = "quizForm">
+		<div ng-repeat="question in vm.Questions track by $index">
+			<label>
+				<div>Question {{$index + 1}}: {{question.q}}</div>
+			</label>
+			<ul>
+				<div ng-repeat="ans in question.ansArray">
+					<label>
+						<!-- <input type="radio" name="answer" value="answer"/>{{ans}} -->
+						<input type="radio" ng-model="ansSelected" ng-value="" />
+						<!-- <div><li>Answer: {{ans}}</li></div> -->
+					</label>
+				</div>
+			</ul>
+		</div>
+	</form>
+</div>
