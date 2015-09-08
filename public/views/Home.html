@@ -44,15 +44,15 @@
 	<h4>Value of ansSelected: {{ansSelected}}</h4>
 	
 	<form name = "quizForm">
-		<div ng-repeat="question in vm.Questions track by $index">
+		<div ng-repeat="question in vm.Questions track by $index" ng-init="questionNum = $index">
 			<label>
 				<div>Question {{$index + 1}}: {{question.q}}</div>
 			</label>
 			<ul>
 				<div ng-repeat="ans in question.ansArray">
 					<label>
-						<!-- <input type="radio" ng-model="vm.ansSelected" value="{{ans}}" /> {{ans}} -->
 						<input type="radio" ng-model="vm.ansSelected[$index]" value="{{ans}}" /> {{ans}}
+						<!-- <input type="radio" ng-model="vm.getSelection($index)" value="{{ans}}" /> {{ans}} -->
 					</label>
 				</div>
 			</ul>
