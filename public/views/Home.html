@@ -51,14 +51,15 @@
 			<ul>
 				<div ng-repeat="ans in question.ansArray">
 					<label>
-						<!-- <input type="radio" name="answer" value="answer"/>{{ans}} -->
-						<input type="radio" ng-model="vm.ansSelected" value="{{ans}}" /> {{ans}}
-						<!-- <input type="radio" ng-model={{ansSelected}} ng-value="" />{{ans}} -->
-						<!-- <div><li>Answer: {{ans}}</li></div> -->
+						<!-- <input type="radio" ng-model="vm.ansSelected" value="{{ans}}" /> {{ans}} -->
+						<input type="radio" ng-model="vm.ansSelected[$index]" value="{{ans}}" /> {{ans}}
 					</label>
 				</div>
 			</ul>
 		</div>
 	</form>
-	<tt>ansSelected = {{ansSelected | json}}</tt><br />
+	
+	<tt>ansSelected = {{vm.ansSelected}}</tt><br />
+
+	<a ng-click="vm.calculate()">Calculate</a>
 </div>

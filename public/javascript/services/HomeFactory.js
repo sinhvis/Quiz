@@ -28,6 +28,9 @@
 		o.questions = [] ;
 		initArray(o.questions) ;
 
+		o.calculate = function() {
+			ansSelected = ansSelected + "Correct" ;
+		} ;
 
 
 		return o;

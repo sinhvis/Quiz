@@ -11,5 +11,9 @@
 		
 		vm.Questions = HomeFactory.questions ;
 		vm.ansSelected = HomeFactory.ansSelected ;
+
+		vm.calculate = function() {
+			HomeFactory.calculate() ;
+		}
 	}
 })();
